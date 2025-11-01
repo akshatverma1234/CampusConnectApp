@@ -1,0 +1,26 @@
+[
+  {
+    "id": "1",
+    "title": "Tech Talk 2025",
+    "description": "Explore the future of AI and ML.nfnaknfeknnedjnegjengjnsjgnrjnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnn",
+    "date": "2025-11-10",
+    "category": "tech",
+    "location": "Auditorium Hall"
+  },
+  {
+    "id": "2",
+    "title": "Cultural Fest",
+    "description": "A celebration of art and music.",
+    "date": "2025-11-15",
+    "category": "cultural",
+    "location": "Main Ground"
+  },
+  {
+    "id": "3",
+    "title": "Sports Day",
+    "description": "Show your athletic spirit!",
+    "date": "2025-12-05",
+    "category": "sports",
+    "location": "Sports Complex"
+  }
+]

@@ -13,9 +13,26 @@ export default function RootLayout() {
         options={{ headerTransparent: true, headerTitle: "" }}
       />
       <Stack.Screen
+        name="(auth)/SignIn"
+        options={{ headerTransparent: true, headerTitle: "" }}
+      />
+      <Stack.Screen
         name="homePage"
         options={{ headerShown: false, headerTitle: "" }}
       />
+      <Stack.Screen
+        name="upcomingEvents"
+        options={{ headerTransparent: true, headerTitle: "" }}
+      />
+      <Stack.Screen
+        name="eventDetails"
+        options={{ headerTransparent: true, headerTitle: "" }}
+      />
+      <Stack.Screen
+        name="registeredEvents"
+        options={{ headerTransparent: true, headerTitle: "" }}
+      />
+      <Stack.Screen name="(tabs)" options={{ headerShown: false }} />
     </Stack>
   );
 }

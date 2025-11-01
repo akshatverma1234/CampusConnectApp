@@ -23,7 +23,7 @@ export default function SignIn() {
       await signInWithEmailAndPassword(auth, email, password);
       Alert.alert("Success", "Welcome back!");
 
-      router.push("/homePage");
+      router.replace("/(tabs)/home");
     } catch (error) {
       console.error("Sign-in error:", error);
       Alert.alert("Login failed", error.message);
@@ -57,15 +57,11 @@ export default function SignIn() {
         />
       </View>
 
-      <View className="mt-6 items-center">
-        <Text className="text-gray-500">
-          Don’t have an account?{" "}
-          <TouchableOpacity onPress={() => router.push("/(auth)/SignUp")}>
-            <Text className="text-blue-700 font-semibold w-full">
-              Create one
-            </Text>
-          </TouchableOpacity>
-        </Text>
+      <View className="mt-6 flex-row items-center justify-center">
+        <Text className="text-gray-500">Don’t have an account? </Text>
+        <TouchableOpacity onPress={() => router.push("/(auth)/SignUp")}>
+          <Text className="text-blue-700 font-semibold">Create one</Text>
+        </TouchableOpacity>
       </View>
     </View>
   );
