@@ -3,6 +3,7 @@ import AsyncStorage from "@react-native-async-storage/async-storage";
 import { useLocalSearchParams, useRouter } from "expo-router";
 import { useEffect, useState } from "react";
 import {
+  Alert,
   SafeAreaView,
   ScrollView,
   Text,
@@ -16,22 +17,17 @@ export default function EventDetails() {
   const [isRegistered, setIsRegistered] = useState(false);
   const [loading, setLoading] = useState(false);
 
-  // Check if user already registered
   useEffect(() => {
     const checkRegistration = async () => {
       try {
         const stored = await AsyncStorage.getItem("registeredEvents");
         const registered = stored ? JSON.parse(stored) : [];
-
         const alreadyRegistered = registered.some((e) => e.id === params.id);
-        if (alreadyRegistered) {
-          setIsRegistered(true);
-        }
+        setIsRegistered(alreadyRegistered);
       } catch (error) {
-        console.log("Error checking registration:", error);
+        console.error("Error checking registration:", error);
       }
     };
-
     checkRegistration();
   }, [params.id]);
 
@@ -42,9 +38,8 @@ export default function EventDetails() {
       let registered = stored ? JSON.parse(stored) : [];
 
       if (registered.find((e) => e.id === params.id)) {
-        alert("You've already registered for this event!");
+        Alert.alert("Notice", "You have already registered for this event.");
         setIsRegistered(true);
-        setLoading(false);
         return;
       }
 
@@ -53,39 +48,32 @@ export default function EventDetails() {
         "registeredEvents",
         JSON.stringify(registered)
       );
+
       setIsRegistered(true);
-      alert("Registration successful!");
+      Alert.alert(
+        "Success",
+        "You have successfully registered for this event!"
+      );
     } catch (error) {
-      alert("Error saving registration.");
+      Alert.alert("Error", "Unable to register for the event.");
     } finally {
       setLoading(false);
     }
   };
 
   return (
-    <SafeAreaView className="flex-1 bg-gray-50">
-      {/* Header */}
-      <View className="bg-slate-900 px-6 py-6 flex-row items-center">
-        <TouchableOpacity onPress={() => router.back()} className="mr-4">
-          <MaterialCommunityIcons name="arrow-left" size={28} color="white" />
-        </TouchableOpacity>
-        <Text className="text-white text-xl font-bold flex-1">
-          Event Details
-        </Text>
-      </View>
-
+    <SafeAreaView className="flex-1 bg-slate-200">
       <ScrollView
         showsVerticalScrollIndicator={false}
-        className="flex-1 px-6 py-6"
+        className="flex-1 px-6 py-6 pt-10"
       >
-        {/* Event Header Banner */}
-        <View className="bg-white rounded-2xl p-5 mb-5 shadow-sm">
-          <View className="flex-row items-start justify-between mb-3">
-            <Text className="text-3xl font-bold text-slate-900 flex-1 mr-2">
+        <View className="bg-white rounded-2xl p-5 mb-5 mt-16 shadow-custom">
+          <View className="flex-row items-start justify-between mb-3 shadow-custom">
+            <Text className="text-3xl font-bold text-slate-900 flex-1 mr-2 shadow-custom ">
               {params.title}
             </Text>
             {params.category && (
-              <View className="bg-emerald-400 rounded-full px-3 py-1">
+              <View className="bg-emerald-400 rounded-full px-3 py-1 shadow-custom">
                 <Text className="text-xs font-bold text-gray-900">
                   {params.category}
                 </Text>
@@ -94,15 +82,13 @@ export default function EventDetails() {
           </View>
         </View>
 
-        {/* Description */}
-        <View className="bg-white rounded-2xl p-5 mb-5 shadow-sm">
+        <View className="bg-white rounded-2xl p-5 mb-5 shadow-custom">
           <Text className="text-gray-600 text-base leading-6">
             {params.description}
           </Text>
         </View>
 
-        {/* Event Details */}
-        <View className="bg-white rounded-2xl p-5 mb-5 shadow-sm">
+        <View className="bg-white rounded-2xl p-5 mb-5 shadow-custom">
           <View className="mb-4 pb-4 border-b border-gray-200">
             <View className="flex-row items-center">
               <MaterialCommunityIcons
@@ -150,7 +136,6 @@ export default function EventDetails() {
           )}
         </View>
 
-        {/* Registration Status */}
         {isRegistered && (
           <View className="bg-green-50 border border-green-200 rounded-2xl p-4 mb-5 flex-row items-center">
             <MaterialCommunityIcons
@@ -165,7 +150,6 @@ export default function EventDetails() {
         )}
       </ScrollView>
 
-      {/* Button Section */}
       <View className="px-6 pb-6 pt-4 border-t border-gray-200 bg-white">
         <TouchableOpacity
           className={`py-4 px-5 rounded-2xl mb-3 ${

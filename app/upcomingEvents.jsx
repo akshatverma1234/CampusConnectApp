@@ -31,7 +31,7 @@ export default function UpcomingEvents() {
   );
 
   return (
-    <View className="flex-1 bg-white p-4">
+    <View className="flex-1 bg-slate-200 p-4">
       <Text className="text-2xl font-bold text-left mb-4 mt-16 pt-8">
         Upcoming Events
       </Text>

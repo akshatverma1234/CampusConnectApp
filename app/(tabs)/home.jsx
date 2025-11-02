@@ -38,9 +38,9 @@ export default function Home() {
   }, [search, events]);
 
   return (
-    <SafeAreaView className="flex-1 bg-gray-50">
-      <View className="bg-gradient-to-b bg-gray-900 rounded-b-3xl shadow-lg">
-        <View className="items-center pt-6 pb-8 px-6">
+    <SafeAreaView className="flex-1 bg-slate-200">
+      <View className="bg-gradient-to-b bg-gray-900 rounded-b-3xl">
+        <View className="items-center pt-12 pb-8 px-6">
           <View className="flex-row items-center justify-center mb-4">
             <View className="bg-cyan-400 p-3 rounded-full mr-3">
               <FontAwesome6 name="graduation-cap" size={32} color="#0f172a" />
@@ -76,18 +76,18 @@ export default function Home() {
         </View>
       </View>
 
-      <View className="flex-row gap-3 px-6 py-5">
+      <View className="flex-row gap-3 px-6 py-5 ">
         <TouchableOpacity
-          className="flex-1 bg-gradient-to-r bg-yellow-300 rounded-2xl py-4 flex items-center justify-center shadow-md"
+          className="flex-1 bg-gradient-to-r bg-yellow-300 rounded-2xl py-4 flex items-center justify-center shadow-custom"
           activeOpacity={0.8}
           onPress={() => router.push("/registeredEvents")}
         >
-          <Text className="font-semibold text-gray-900 text-base">
+          <Text className="font-semibold text-gray-900 text-base ">
             Registered Events
           </Text>
         </TouchableOpacity>
         <TouchableOpacity
-          className="flex-1 bg-gradient-to-r bg-blue-400 rounded-2xl py-4 flex items-center justify-center shadow-md"
+          className="flex-1 bg-gradient-to-r bg-blue-400 rounded-2xl py-4 flex items-center justify-center shadow-custom"
           activeOpacity={0.8}
           onPress={() => router.push("/upcomingEvents")}
         >
@@ -97,17 +97,17 @@ export default function Home() {
         </TouchableOpacity>
       </View>
 
-      <View className="px-6 mb-3">
+      <View className="px-6 mt-2">
         <Text className="text-3xl font-bold text-slate-900">
           Latest Upcoming Events
         </Text>
       </View>
 
-      <View className="flex-1 px-6 pb-4 bg-white">
+      <View className="flex-1 px-6  bg-slate-200 p-5">
         <FlatList
-          data={filteredEvents.slice(0, 3)} // 👈 only 3 latest
+          data={filteredEvents.slice(0, 3)}
           keyExtractor={(item) => item.id?.toString()}
-          showsVerticalScrollIndicator={true}
+          showsVerticalScrollIndicator={false}
           contentContainerStyle={{ paddingBottom: 24 }}
           ListEmptyComponent={
             <View className="items-center justify-center py-16">

@@ -73,19 +73,19 @@ export default function RegisteredEvents() {
   );
 
   return (
-    <SafeAreaView className="flex-1 bg-gray-50">
-      <View className="bg-gradient-to-b bg-gray-400 rounded-b-3xl shadow-lg">
+    <SafeAreaView className="flex-1 bg-slate-200">
+      <View className="bg-gradient-to-b bg-orange-600 rounded-b-3xl shadow-custom">
         <View className="flex-row items-center mb-2 mt-16 p-8">
           <MaterialCommunityIcons
             name="bookmark-check"
             size={28}
-            color="black"
+            color="white"
           />
           <Text className="text-3xl font-bold text-white ml-3">
             My Registered Events
           </Text>
         </View>
-        <Text className="text-gray-800 text-[16px] mt-2 ml-8 mb-2">
+        <Text className="text-white text-[16px] mt-2 ml-8 mb-2">
           Total Events:{" "}
           <Text className="text-cyan-300 font-semibold text-[16px]">
             {registered.length}
@@ -122,7 +122,7 @@ export default function RegisteredEvents() {
             showsVerticalScrollIndicator={false}
             contentContainerStyle={{ paddingBottom: 16 }}
             renderItem={({ item }) => (
-              <View className="bg-white rounded-2xl p-5 mb-4 shadow-lg">
+              <View className="bg-white rounded-2xl p-5 mb-4 shadow-custom">
                 <View className="flex-row items-start justify-between mb-3">
                   <Text className="text-lg font-bold text-slate-900 flex-1 mr-2">
                     {item.title}

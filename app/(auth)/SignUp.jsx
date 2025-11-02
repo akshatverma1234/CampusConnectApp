@@ -1,3 +1,4 @@
+import { FontAwesome6 } from "@expo/vector-icons";
 import { useRouter } from "expo-router";
 import { createUserWithEmailAndPassword, updateProfile } from "firebase/auth";
 import { doc, serverTimestamp, setDoc } from "firebase/firestore";
@@ -40,6 +41,7 @@ export default function SignUp() {
       });
 
       Alert.alert("Success", "Account created successfully!");
+      router.push("/(auth)/SignIn");
     } catch (err) {
       Alert.alert("Signup Error", err.message);
     } finally {
@@ -48,7 +50,18 @@ export default function SignUp() {
   };
 
   return (
-    <View className="flex-1 bg-gradient-to-b from-blue-100 to-white px-6 pt-24">
+    <View className="flex-1 bg-gradient-to-b bg-white px-6 pt-16">
+      <View className="items-center pt-12 pb-8">
+        <View className="bg-cyan-400 p-4 rounded-full mb-2">
+          <FontAwesome6 name="graduation-cap" size={48} color="#0f172a" />
+        </View>
+        <Text className="text-3xl font-extrabold text-gray-900">
+          Campus <Text className="text-cyan-400">Connect</Text>
+        </Text>
+        <Text className="text-gray-800 text-sm mt-2">
+          Discover & Register for Events
+        </Text>
+      </View>
       <Text className="text-3xl font-extrabold text-blue-900 text-center mb-8">
         Create New Account
       </Text>

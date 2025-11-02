@@ -38,19 +38,21 @@ export default function MyEvents() {
   );
 
   return (
-    <SafeAreaView className="flex-1 bg-gray-50">
-      <View className="bg-gray-800 rounded-b-3xl shadow-lg">
-        <View className="flex-row items-center mb-2 mt-16 p-8">
+    <SafeAreaView className="flex-1 bg-slate-200">
+      <View className="rounded-b-3xl shadow-custom">
+        <View className="flex-row items-center mt-8 px-6">
           <MaterialCommunityIcons
             name="calendar-check"
             size={28}
             color="#06b6d4"
           />
-          <Text className="text-3xl font-bold text-white ml-3">My Events</Text>
+          <Text className="text-3xl font-bold text-black ml-3">
+            My Registered Events
+          </Text>
         </View>
-        <Text className="text-gray-300 text-[16px] mt-2 ml-8 mb-2">
+        <Text className="text-gray-800 text-[16px] mt-2 ml-8 mb-2">
           Registered:{" "}
-          <Text className="text-cyan-300 text-[16px] font-semibold">
+          <Text className="text-green-500 text-[16px] font-semibold">
             {registered.length}
           </Text>
         </Text>
@@ -86,7 +88,7 @@ export default function MyEvents() {
             contentContainerStyle={{ paddingBottom: 16 }}
             renderItem={({ item }) => (
               <TouchableOpacity
-                className="bg-white rounded-2xl p-5 mb-4 shadow-lg active:shadow-lg"
+                className="bg-white rounded-2xl p-5 mb-4 shadow-custom active:shadow-custom"
                 activeOpacity={0.75}
               >
                 <View className="flex-row items-start justify-between mb-3">

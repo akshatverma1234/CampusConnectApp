@@ -1,26 +1,92 @@
 [
   {
     "id": "1",
-    "title": "Tech Talk 2025",
-    "description": "Explore the future of AI and ML.nfnaknfeknnedjnegjengjnsjgnrjnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnn",
+    "title": "Tech Talk 2025: AI & Machine Learning",
+    "description": "Join industry experts as they discuss the latest trends in Artificial Intelligence and Machine Learning. Learn about real-world applications, career opportunities, and the future of technology.",
     "date": "2025-11-10",
-    "category": "tech",
-    "location": "Auditorium Hall"
+    "time": "02:00 PM",
+    "category": "Tech",
+    "location": "IC Hall, Ab-2"
   },
   {
     "id": "2",
-    "title": "Cultural Fest",
-    "description": "A celebration of art and music.",
+    "title": "Annual Cultural Fest",
+    "description": "A celebration of art, music, dance, and traditions from around the world. Featuring live performances, food stalls, and cultural exhibitions. Open to all students and staff.",
     "date": "2025-11-15",
-    "category": "cultural",
-    "location": "Main Ground"
+    "time": "04:00 PM",
+    "category": "Arts",
+    "location": "GD Ground"
   },
   {
     "id": "3",
-    "title": "Sports Day",
-    "description": "Show your athletic spirit!",
+    "title": "Inter-College Sports Day",
+    "description": "Compete with students from other colleges in cricket, basketball, badminton, volleyball, and athletics. Show your athletic spirit and earn points for your college!",
     "date": "2025-12-05",
-    "category": "sports",
+    "time": "08:00 AM",
+    "category": "Sports",
     "location": "Sports Complex"
+  },
+  {
+    "id": "4",
+    "title": "Web Development Workshop",
+    "description": "Learn modern web development with HTML, CSS, and JavaScript. Hands-on session covering responsive design, frameworks, and deployment. Suitable for beginners and intermediate level.",
+    "date": "2025-11-20",
+    "time": "03:30 PM",
+    "category": "Tech",
+    "location": "EC hall"
+  },
+  {
+    "id": "5",
+    "title": "Campus Talent Hunt",
+    "description": "Showcase your talent! Categories include singing, dancing, comedy, and instrumental music. Cash prizes and certificates for winners. Registration closes on November 18.",
+    "date": "2025-11-22",
+    "time": "06:00 PM",
+    "category": "Arts",
+    "location": "GD Ground"
+  },
+  {
+    "id": "6",
+    "title": "Business Case Competition",
+    "description": "Compete with peers to solve real business problems. Teams of 4 members will analyze case studies and present solutions. Mentorship from industry professionals included.",
+    "date": "2025-12-01",
+    "time": "10:00 AM",
+    "category": "Academic",
+    "location": "AB-1"
+  },
+  {
+    "id": "7",
+    "title": "Fresher's Welcome Party",
+    "description": "Welcome new students to campus! Meet your batchmates, enjoy games, music, and food. Fun activities and prizes throughout the evening. Dress code: Casual.",
+    "date": "2025-11-08",
+    "time": "05:00 PM",
+    "category": "Social",
+    "location": "EC hall"
+  },
+  {
+    "id": "8",
+    "title": "Debate Championship",
+    "description": "Participate in thought-provoking debates on contemporary issues. Topics will be announced on the day. Open to all students. Prizes for best speaker and best team.",
+    "date": "2025-11-25",
+    "time": "02:00 PM",
+    "category": "Academic",
+    "location": "Auditorium Hall, Block A"
+  },
+  {
+    "id": "9",
+    "title": "Annual Marathon",
+    "description": "Join the campus-wide marathon event. Route: 5km around campus. Early morning start with refreshments at checkpoints. T-shirts and medals for all participants.",
+    "date": "2025-12-10",
+    "time": "06:30 AM",
+    "category": "Sports",
+    "location": "Main Gate to Main Ground"
+  },
+  {
+    "id": "10",
+    "title": "Entrepreneurship Summit",
+    "description": "Learn from successful entrepreneurs and startup founders about building businesses from scratch. Sessions on funding, marketing, and scaling. Networking opportunities included.",
+    "date": "2025-12-03",
+    "time": "01:00 PM",
+    "category": "Academic",
+    "location": "Seminar Hall, Block D"
   }
 ]

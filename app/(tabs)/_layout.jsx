@@ -5,22 +5,45 @@ export default function TabLayout() {
   return (
     <Tabs
       screenOptions={{
-        headerShown: false,
-        tabBarActiveTintColor: "#2563eb",
-        tabBarStyle: {
-          backgroundColor: "#f8f9fa",
-          borderTopWidth: 0,
-          height: 60,
+        tabBarShowLabel: false,
+        tabBarItemStyle: {
+          flex: 1,
+          justifyContent: "center",
+          alignItems: "center",
         },
-        tabBarLabelStyle: { fontSize: 12, marginBottom: 5 },
+        tabBarStyle: {
+          backgroundColor: "#0f0D23",
+          borderRadius: 50,
+          marginHorizontal: 20,
+          marginBottom: 35,
+          height: 54,
+          position: "absolute",
+          overflow: "hidden",
+          borderWidth: 1,
+          borderColor: "#0f0d23",
+          display: "flex",
+          flexDirection: "row",
+          justifyContent: "space-around",
+          alignItems: "center",
+          paddingHorizontal: 0,
+        },
+        tabBarIconStyle: {
+          justifyContent: "center",
+          alignItems: "center",
+          marginHorizontal: 0,
+          marginVertical: 0,
+        },
+        tabBarActiveTintColor: "#06b6d4",
+        tabBarInactiveTintColor: "#64748b",
       }}
     >
       <Tabs.Screen
         name="home"
         options={{
-          title: "Home",
+          title: "Campus Connect",
+          headerShown: false,
           tabBarIcon: ({ color, size }) => (
-            <Ionicons name="home-outline" size={size} color={color} />
+            <Ionicons name="home" size={28} color={color} />
           ),
         }}
       />
@@ -29,7 +52,7 @@ export default function TabLayout() {
         options={{
           title: "Registered Events",
           tabBarIcon: ({ color, size }) => (
-            <Ionicons name="calendar-outline" size={size} color={color} />
+            <Ionicons name="calendar" size={28} color={color} />
           ),
         }}
       />
@@ -37,8 +60,9 @@ export default function TabLayout() {
         name="profile"
         options={{
           title: "Profile",
+
           tabBarIcon: ({ color, size }) => (
-            <Ionicons name="person-outline" size={size} color={color} />
+            <Ionicons name="person" size={28} color={color} />
           ),
         }}
       />

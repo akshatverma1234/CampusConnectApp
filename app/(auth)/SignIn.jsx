@@ -1,7 +1,14 @@
+import { FontAwesome6 } from "@expo/vector-icons";
 import { useRouter } from "expo-router";
 import { signInWithEmailAndPassword } from "firebase/auth";
 import { useState } from "react";
-import { Alert, Text, TouchableOpacity, View } from "react-native";
+import {
+  ActivityIndicator,
+  Alert,
+  Text,
+  TouchableOpacity,
+  View,
+} from "react-native";
 import Button from "../../components/Button";
 import TextInputField from "../../components/TextInputField";
 import { auth } from "../../configs/FirebaseConfig";
@@ -33,10 +40,18 @@ export default function SignIn() {
   };
 
   return (
-    <View className="flex-1 bg-purple-100 px-6 pt-24">
-      <Text className="text-3xl font-extrabold text-blue-900 mt-[40px] text-center">
-        Welcome Back
-      </Text>
+    <View className="flex-1 bg-white px-6 pt-24">
+      <View className="items-center pt-12 pb-8">
+        <View className="bg-cyan-400 p-4 rounded-full mb-4">
+          <FontAwesome6 name="graduation-cap" size={48} color="#0f172a" />
+        </View>
+        <Text className="text-3xl font-extrabold text-gray-900">
+          Campus <Text className="text-cyan-400">Connect</Text>
+        </Text>
+        <Text className="text-gray-800 text-sm mt-2">
+          Discover & Register for Events
+        </Text>
+      </View>
 
       <View className="mt-6">
         <TextInputField
@@ -51,10 +66,11 @@ export default function SignIn() {
           secureTextEntry
         />
 
-        <Button
-          text={loading ? "Signing In..." : "Sign In"}
-          onPress={handleSignIn}
-        />
+        {loading ? (
+          <ActivityIndicator size="large" color="#1E3A8A" className="mt-4" />
+        ) : (
+          <Button text="Sign In" onPress={handleSignIn} />
+        )}
       </View>
 
       <View className="mt-6 flex-row items-center justify-center">
