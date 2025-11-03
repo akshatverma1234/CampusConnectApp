@@ -32,6 +32,5 @@ if (Platform.OS === "web") {
   });
 }
 
-// Initialize Firestore
 export const db = getFirestore(app);
 export { app, auth };

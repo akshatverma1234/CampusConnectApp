@@ -12,8 +12,10 @@
       "distribution": "internal"
     },
     "production": {
-      "node": "20.10.0",
-      "autoIncrement": true
+      "autoIncrement": true,
+      "cache": {
+        "disabled": false
+      }
     }
   },
   "submit": {
